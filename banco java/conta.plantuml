@@ -1,0 +1,54 @@
+@startuml Banco 
+
+class Banco {
+  - nome: string
+  - endereco: string
+  + Banco(string, string)
+  + getNome(): string
+  + getEndereco(): string
+}
+
+class Conta {
+  - numeroConta: int
+  - saldo: double
+  - banco: Banco
+  + Conta(int, double, Banco)
+  + getNumeroConta(): int
+  + getSaldo(): double
+  + depositar(double)
+  + sacar(double)
+  + transferir(Conta, double)
+}
+
+class ContaCorrente extends Conta {
+  - limiteChequeEspecial: double
+  + ContaCorrente(int, double, Banco, double)
+  + getLimiteChequeEspecial(): double
+  + setLimiteChequeEspecial(double)
+  + sacar(double) override
+}
+
+class ContaPoupanca extends Conta {
+  - taxaJuros: double
+  + ContaPoupanca(int, double, Banco, double)
+  + getTaxaJuros(): double
+  + setTaxaJuros(double)
+  + calcularJuros()
+}
+
+class Cliente {
+  - nome: string
+  - cpf: string
+  - contas: Conta[*]
+  + Cliente(string, string)
+  + getNome(): string
+  + getCpf(): string
+  + addConta(Conta)
+  + getContas(): Conta[*]
+}
+
+Banco --* Conta
+Conta --* Cliente
+ContaCorrente --|> Conta
+ContaPoupanca --|> Conta
+@enduml
