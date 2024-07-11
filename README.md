@@ -1,4 +1,5 @@
 # Conta Java
+
 ================
 
 ## Descrição do Projeto
@@ -15,7 +16,6 @@ Este é um projeto de conta em Java que permite aos usuários criar, ler, atuali
 ## Tecnologias Utilizadas
 
 * Java 8
-* Eclipse IDE
 
 ## Estrutura do Projeto
 
