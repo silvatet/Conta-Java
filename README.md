@@ -9,7 +9,7 @@ Este é um projeto de conta em Java que permite aos usuários criar, ler, atuali
 
 ## Funcionalidades
 
-* Criação de contas bancárias com número de conta, titular e saldo inicial
+* Criação de contas bancárias com número de conta, titular e saldo inicial 
 * Depósito e saque de valores em contas bancárias
 * Consulta de saldo e histórico de transações de contas bancárias
 * Exclusão de contas bancárias
